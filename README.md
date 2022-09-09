@@ -26,3 +26,15 @@ This is for selif-php learning and practice
 - closeCursor()方法的作用：
   > Free up the resources using closeCursor
 
+#### php语法的精妙
+与HTML标签的嵌入使用很精妙，以下是几种嵌入变量或者是嵌入实参的写法：
+<?php $firstname = $_POST["firstname"]; ?>
+这是在将firstname quote as a variable。
+<tr><td>Welcome, <?php echo $_POST["firstname"]; ?></td></tr>
+<tr><td><?php echo "Your last name is  $_POST[lastname]"; ?></td></tr>
+<tr><td><?php echo "Anyway, nice to meet you $firstname $lastname"; ?></td></tr>
+第一种写法是quote as arguments，用实参的形式嵌入到html中。Welcome是直接用html的tag之内打印出来的，而剩下的echo是直接用post方法取到实参。
+第二种写法是删掉前面的welcome，直接用echo来打印string，然后直接用post取到lastname这个string，quote in a string。
+第三种写法是直接echo出来两个变量值。
+
+

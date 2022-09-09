@@ -9,7 +9,7 @@ while($row = $stmt->fetch()): ?>
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
-        <td><?php echo $row["Contact"]; ?></td>
+        <td><?php echo $row[4]; ?></td>
     </tr>
 <?php endwhile;
 $stmt->closeCursor(); ?>
