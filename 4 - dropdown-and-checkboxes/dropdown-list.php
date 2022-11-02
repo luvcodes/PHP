@@ -10,28 +10,18 @@ $dsn = "mysql:host=$db_host;dbname=$db_name";
 $dbh = new PDO($dsn,$db_username,$db_passwd);
 $query = "SELECT * FROM `publishers` ORDER BY `company_name`";
 $stmt = $dbh->prepare($query);
+$stmt->execute();
 ?>
-<?php if ($stmt->execute() && $stmt->rowCount() > 0): ?>
+<?php if ($stmt->rowCount() > 0): ?>
     <form>
         <label for="publisher">Select a publisher</label><br />
         <select name="publisher" id="publisher">
             <?php while ($row = $stmt->fetchObject()): ?>
-                <?php
-                if ($row->ID == $_GET['assign']) {
-                    $selected = "selected";
-                } else {
-                    $selected = "";
-                }
-                ?>
-                <option value="<?= $row->ID ?>" <?=$selected?>><?= $row->company_name ?></option>
+                <option value="<?= $row->ID ?>"><?= $row->company_name ?></option>
             <?php endwhile; ?>
         </select>
         <input type="submit"/>
     </form>
 <?php endif; ?>
-<!--<div class="more-space">-->
-<!--    The following query has been executed:-->
-<!--    <pre>--><?//= $query; ?><!--</pre>-->
-<!--</div>-->
 </body>
 </html>

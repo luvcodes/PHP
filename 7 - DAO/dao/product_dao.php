@@ -10,10 +10,10 @@ class product_dao {
     //list of products
     public $products;
 
+    private $_host;
     private $_username;
     private $_password;
     private $_db;
-    private $_host;
     private $_query;
     private $_dbh;
     private $_stmt;

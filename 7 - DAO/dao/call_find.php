@@ -11,5 +11,5 @@ if (!$productDAO->get_error()) {
 }
 
 var_dump($productDAO->name);
-var_dump($productDAO->description);
-var_dump($productDAO->price);
+//var_dump($productDAO->description);
+//var_dump($productDAO->price);

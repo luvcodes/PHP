@@ -2,7 +2,6 @@
 <html lang="en_AU">
 <head>
     <title>Sessions and cookies</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <?php

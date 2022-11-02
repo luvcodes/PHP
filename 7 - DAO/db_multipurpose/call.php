@@ -5,7 +5,6 @@ require_once('database.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //let's test by inserting a record
     $insertion_query = "INSERT INTO `products` (`name`, `description`, `price`) VALUES (?, ?, ?)";
-
     //instantiate database object, and retrieve query
     $insertionDBO = new database();
     $insertionDBO->set_query($insertion_query);
@@ -20,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 $list_query = "SELECT * FROM `products` ORDER BY `id` DESC";
-
 //instantiate database object, and retrieve query
 $listDBO = new database();
 $listDBO->set_query($list_query);
